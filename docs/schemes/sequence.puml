@@ -1,0 +1,16 @@
+@startuml basic sequence
+autonumber
+skinparam responseMessageBelowArrow true
+
+participant Gitlab
+participant Sova
+participant Messenger
+
+note left of Messenger: Rocket.Chat, Discord, \nSlack, etc.
+
+Gitlab -> Sova: [http webhook] sends an event
+Sova -> Gitlab: [http] responds with 200
+Sova -> Sova: parses the event
+Sova -> Sova: gets strategy for the event
+Sova -> Messenger: sends a message
+@enduml

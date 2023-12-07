@@ -1,0 +1,20 @@
+@startuml Basic interaction
+left to right direction
+actor "Developer" as dev
+
+
+package "Sova" {
+    usecase "Get notification about new assigned MR" as get_notification
+    usecase "Get notification about new comment" as get_comment
+    usecase "Get notification about MR ready to merge" as get_mr
+    usecase "Get notification about MR merged" as get_mr_merged
+    usecase "Get notification about deploy status" as get_deploy
+}
+
+dev --> get_notification
+dev --> get_comment
+dev --> get_mr
+dev --> get_mr_merged
+dev --> get_deploy
+
+@enduml
